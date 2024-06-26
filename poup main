@@ -1,0 +1,17 @@
+public class ContaPoupanca extends Conta {
+    private static final double TAXA_TRANSFERENCIA = 5.0;
+
+    public ContaPoupanca(String numero, double saldoInicial) {
+        super(numero, saldoInicial);
+    }
+
+    @Override
+    public void transferir(Conta destino, double valor) {
+        if (this.sacar(valor + TAXA_TRANSFERENCIA)) {
+            destino.depositar(valor);
+            System.out.println("Transferência de R$" + valor + " realizada para conta " + destino.getNumero());
+        } else {
+            System.out.println("Transferência não realizada. Saldo insuficiente.");
+        }
+    }
+}
