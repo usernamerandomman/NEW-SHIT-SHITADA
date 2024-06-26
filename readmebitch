@@ -1,0 +1,32 @@
+# Banco Digital em Java
+
+Projeto de exemplo de um sistema bancário simples em Java, implementado utilizando Programação Orientada a Objetos (POO).
+
+## Funcionalidades
+
+- Contas: Corrente e Poupança
+- Operações: Depósito, Saque e Transferência
+
+## Como Usar
+
+1. Clone o repositório.
+2. Importe o projeto em sua IDE Java.
+3. Execute a classe `BancoApp` para testar o sistema.
+
+## Estrutura do Projeto
+
+src/
+├── main/
+│ ├── java/
+│ │ └── com/
+│ │ └── /;=;)/
+│ │ ├── Conta.java
+│ │ ├── ContaCorrente.java
+│ │ ├── ContaPoupanca.java
+│ │ └── BancoApp.java
+│ └── resources/
+└── test/
+└── java/
+└── com/
+└── seuDominio/
+└── BancoAppTest.java
