@@ -1,0 +1,30 @@
+public class ContaCorrente extends Conta {
+    private static final double TAXA_SAQUE = 2.0;
+
+    public ContaCorrente(String numero, double saldoInicial) {
+        super(numero, saldoInicial);
+    }
+
+    @Override
+    public void transferir(Conta destino, double valor) {
+        if (this.sacar(valor)) {
+            destino.depositar(valor);
+            System.out.println("Transferência de R$" + valor + " realizada para conta " + destino.getNumero());
+        } else {
+            System.out.println("Transferência não realizada. Saldo insuficiente.");
+        }
+    }
+
+    @Override
+    public boolean sacar(double valor) {
+        double valorComTaxa = valor + TAXA_SAQUE;
+        if (saldo >= valorComTaxa) {
+            saldo -= valorComTaxa;
+            System.out.println("Saque de R$" + valor + " realizado. Novo saldo: R$" + saldo);
+            return true;
+        } else {
+            System.out.println("Saldo insuficiente para saque de R$" + valor);
+            return false;
+        }
+    }
+}
