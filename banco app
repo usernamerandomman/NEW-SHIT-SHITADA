@@ -1,0 +1,14 @@
+public class BancoApp {
+    public static void main(String[] args) {
+        ContaCorrente cc1 = new ContaCorrente("001", 1000);
+        ContaPoupanca cp1 = new ContaPoupanca("002", 500);
+
+        cc1.depositar(500);
+        cc1.sacar(200);
+
+        cp1.depositar(300);
+        cp1.sacar(100);
+
+        cc1.transferir(cp1, 300);
+    }
+}
